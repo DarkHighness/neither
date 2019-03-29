@@ -2,11 +2,12 @@
 #define NEITHER_TRY_HPP
 
 #include <functional>
-#include <neither/either.hpp>
+
+#include "either.hpp"
 
 namespace neither {
 
-template <class E, class F, class... X>
+template <typename E, typename F, typename... X>
 auto Try(F const &f, X &&... x)
     -> Either<E, decltype(f(std::forward<X>(x)...))> {
   try {
@@ -15,6 +16,6 @@ auto Try(F const &f, X &&... x)
     return left(e);
   }
 }
-}
+}  // namespace neither
 
 #endif

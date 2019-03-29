@@ -5,3 +5,5 @@ buck-out
 .buckconfig.d
 BUCKAROO_DEPS
 buckaroo_macros.bzl
+cmake-build-debug
+.idea
